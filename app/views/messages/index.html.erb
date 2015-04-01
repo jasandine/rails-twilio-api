@@ -1,0 +1,7 @@
+<h1>All yo messages:</h1>
+
+<ul>
+  <% @messages.each do |message| %>
+    <li><%= link_to message.id %></li>
+  <% end %>
+</ul>
