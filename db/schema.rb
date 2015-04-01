@@ -17,15 +17,16 @@ ActiveRecord::Schema.define(version: 20150401222636) do
   enable_extension "plpgsql"
 
   create_table "contacts", force: :cascade do |t|
-    t.string "name"
-    t.string "phone"
+    t.string  "name"
+    t.string  "phone"
+    t.integer "user_id"
   end
 
   create_table "messages", force: :cascade do |t|
-    t.string  "to"
-    t.string  "from"
-    t.text    "body"
-    t.integer "user_id"
+    t.string "to"
+    t.string "from"
+    t.text   "body"
+    t.string "contact_id"
   end
 
   create_table "users", force: :cascade do |t|

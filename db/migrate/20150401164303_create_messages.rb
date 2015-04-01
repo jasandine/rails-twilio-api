@@ -4,6 +4,7 @@ class CreateMessages < ActiveRecord::Migration
       t.string :to
       t.string :from
       t.text :body
+      t.string :contact_id
     end
   end
 end
