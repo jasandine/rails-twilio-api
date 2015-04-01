@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
       flash[:notice] = "Your message was sent"
       redirect_to messages_path
     else
-      render: new_message_path
+      render :new
     end
   end
 
