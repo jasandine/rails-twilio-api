@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'rest_client'
 
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -45,7 +47,12 @@ group :development, :test do
   gem 'spring'
 
   gem 'dotenv-rails'
-  
-  gem 'rspec-rails'
 
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'vcr'
+
+  gem 'webmock'
 end
