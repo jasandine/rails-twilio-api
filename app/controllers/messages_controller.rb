@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  before_filter :authenticate_user!, except: [:index, :show, :edit]
+
   def index
     @messages = Message.all
   end
@@ -8,7 +10,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(message_params)
+    @message = current_user.messages.new(message_params)
     if @message.save
       flash[:notice] = "Great success!"
       redirect_to messages_path
